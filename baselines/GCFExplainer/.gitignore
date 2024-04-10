@@ -1,0 +1,14 @@
+data/*
+results/*
+log/*
+**__pycache__/
+
+*.log
+*.json
+*.pyc
+*.pt
+
+!data/*.smi
+!data/*.json
+
+results*

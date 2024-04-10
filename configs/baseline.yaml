@@ -1,0 +1,22 @@
+task: baseline
+
+dataset_name: &dataset aids_test
+vae_model: PS-VAE/ckpts/zinc250k/constraint_prop_opt/epoch5.ckpt
+gnn_model: data/{dataset_name}/gnn/model_best.pth
+save_file: results_test.json
+
+max_atom_num: 60
+add_edge_th: 0.5
+temperature: 1
+threshold: 0.87
+beam_size: 10
+max_iter: 100
+annealing_temp: 0.1
+
+stop_early: True
+stop_condition:
+  prediction: 0.5
+
+importance:
+  key: ['prediction', 'coverage']
+  weight: [1, 0]

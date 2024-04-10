@@ -1,0 +1,3 @@
+[submodule "PS-VAE"]
+	path = PS-VAE
+	url = https://github.com/THUNLP-MT/PS-VAE.git

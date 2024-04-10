@@ -1,0 +1,16 @@
+task: summary
+
+gpu: 0
+cpu: 1
+
+dataset_name: &dataset aids_test
+vae_model: PS-VAE/ckpts/zinc250k/constraint_prop_opt/epoch5.ckpt
+gnn_model: data/{dataset_name}/gnn/model_best.pth
+
+threshold: 0.87
+k: [1,5,10,25,50,100]
+
+max_cand_num: 1335
+max_cand_per_path: 1
+only_last: True
+check_cf: True

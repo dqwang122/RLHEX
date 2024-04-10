@@ -1,0 +1,20 @@
+task: sample
+
+dataset_name: &dataset aids
+vae_model: PS-VAE/ckpts/zinc250k/constraint_prop_opt/epoch5.ckpt
+gnn_model: data/{dataset_name}/gnn/model_best.pth
+save_file: results.json
+
+max_atom_num: 60
+add_edge_th: 0.5
+temperature: 0.8
+threshold: 0.87
+beam_size: 10
+max_iter: 20
+annealing_temp: 0.1
+
+stop_early: False
+
+importance:
+  key: ['coverage', 'prediction']
+  weight: [10, 1]
